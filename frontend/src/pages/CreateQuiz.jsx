@@ -9,7 +9,33 @@ const CreateQuiz = () => {
 
     const handleQuizCreate = async (e) => {
         e.preventDefault();
-        // ... (rest of the function remains the same)
+
+        const quiz = {
+            author: "unknown",
+            quizTitle,
+            questions
+        };
+
+        const response = await fetch('http://localhost:3000/api/quizes/', {
+            method: 'POST',
+            body: JSON.stringify(quiz),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        const json = await response.json();
+
+        if (!response.ok) {
+            setError(json.error);
+        }
+
+        if (response.ok) {
+            setQuizTitle('');
+            setQuestions([]);
+            setError(null);
+            console.log("new quiz added", json);
+        }
     };
 
     return (

@@ -21,7 +21,7 @@ function App() {
             element={<CreateQuiz />}
           />
           <Route
-            path='/Quiz'
+            path='/quiz/:id'
             element={<Quiz />}
           />
         </Routes>

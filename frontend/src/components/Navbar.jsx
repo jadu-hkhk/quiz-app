@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { NavLink } from "./NavLink"
+import { NavLink } from '../components/NavLink';
 
 const Navbar = () => {
     return (
@@ -13,7 +13,6 @@ const Navbar = () => {
                 <nav className="flex space-x-6">
                     <NavLink to="/">Home</NavLink>
                     <NavLink to="/createQuiz">Create Quiz</NavLink>
-                    <NavLink to="/quiz">Quiz</NavLink>
                 </nav>
             </div>
         </header>
